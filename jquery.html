@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Johnathan's Site.</title>
+
+    <style>
+        div {
+            height: 20px;
+            width: 20px;
+            background-color: blueviolet;
+        }
+
+        div.odd {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+<br><br> <p>Your name?</p>
+<input type="text" id="name" placeholder="Enter your name, mortal.">
+<br>
+<input type="button" value="submit" id="btn">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function (event) {
+            $("a").click(function (event) {
+                alert("Thanks for visiting!");
+            });
+        
+
+            $("#btn").click(function (event) {
+                alert("Hello " + $("#name").val() + "! Welcome to my site!");
+            });
+        });
+
+    </script>
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+
+</html>

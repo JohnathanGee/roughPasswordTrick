@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Enter Password</title>
+</head>
+
+<body>
+
+    <input type="text" id="passwordInput" maxlength="5" oninput="substituteCharacters()">
+    <input type="button" id="error" value="Submit">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+    <script>
+        var currentIndex = 0;
+
+        $(document).ready(function (event) {
+            $("#error").click(function (event) {
+                alert("Wrong password.");
+            });
+        });
+
+        function substituteCharacters() {
+            var input = document.getElementById("passwordInput");
+            var value = input.value.toLowerCase();
+
+            var substitutions = ["w", "r", "o", "n", "g "];
+
+            if (currentIndex < substitutions.length) {
+                var currentChar = substitutions[currentIndex];
+                if (value.charAt(value.length - 1) !== currentChar) {
+                    input.value = value.substr(0, value.length - 1) + currentChar;
+                }
+            } else {
+                input.value = "wrong";
+            }
+
+            currentIndex = value.length < substitutions.length ? value.length : substitutions.length;
+        }
+    </script>
+</body>
+
+</html>
